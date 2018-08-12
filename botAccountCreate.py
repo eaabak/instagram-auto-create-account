@@ -11,8 +11,8 @@ name = account.username()
 
 #Fill the email value
 email_field = browser.find_element_by_name('emailOrPhone')
-email_field.send_keys(account.genEmail())
-print(account.genEmail())
+email_field.send_keys(account.generatingEmail())
+print(account.generatingEmail())
 
 #Fill the fullname value
 fullname_field = browser.find_element_by_name('fullName')
