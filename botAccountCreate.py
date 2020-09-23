@@ -34,6 +34,7 @@ WebDriverWait(browser, 20).until(EC.element_to_be_clickable((By.XPATH, "//button
 
 time.sleep(8)
 
+#Birthday verification
 browser.find_element_by_xpath("//*[@id='react-root']/section/main/div/article/div/div[1]/div/div[4]/div/div/span/span[1]/select/option[3]").click()
 
 WebDriverWait(browser, 20).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='react-root']/section/main/div/article/div/div[1]/div/div[4]/div/div/span/span[2]/select"))).click()
@@ -46,8 +47,6 @@ browser.find_element_by_xpath("//*[@id='react-root']/section/main/div/article/di
 
 
 WebDriverWait(browser, 20).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='react-root']/section/main/div/article/div/div[1]/div/div[6]"))).click()
-
-#
 
 print('Registering....')
 
