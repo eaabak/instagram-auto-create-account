@@ -10,3 +10,4 @@ Also, you can use other browsers with tweaking the code.
 #Another browser
 browser = webdriver.Firefox("your firefox driver path here")
 ```
+### Note: <p>Don't forget to add the <b>BeautifuSoup</b> and <b>Requests</b> libraries for it to work properly.</p>
