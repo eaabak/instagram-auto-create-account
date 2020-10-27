@@ -10,4 +10,11 @@ Also, you can use other browsers with tweaking the code.
 #Another browser
 browser = webdriver.Firefox("your firefox driver path here")
 ```
-### Note: <p>Don't forget to add the <b>BeautifuSoup</b> and <b>Requests</b> libraries for it to work properly.</p>
+<h2>New features</h2>
+
+<ol>
+  <li>Fake email address</li>
+  <li>Getting verification code</li>
+</ol> 
+
+#### Note: <p>Don't forget to add the <b>BeautifuSoup</b> and <b>Requests</b> libraries to take fake email.</p>
