@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 
-
 def getFakeMail():
     url = 'https://email-fake.com/'
     req = requests.get(url)
