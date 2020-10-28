@@ -9,7 +9,7 @@ import getVerifCode as verifiCode
 import fakeMail as email
 
 
-browser= webdriver.Chrome("./chromedriver")
+browser= webdriver.Chrome("your chrome driver path here")
 browser.get("https://www.instagram.com/accounts/emailsignup/")
 time.sleep(8) #time.sleep count can be changed depending on the Internet speed.
 name = account.username()
