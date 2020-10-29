@@ -10,11 +10,18 @@ Also, you can use other browsers with tweaking the code.
 #Another browser
 browser = webdriver.Firefox("your firefox driver path here")
 ```
+<h2>Requirements</h2>
+<p> run
+<code>
+  pip install -r requirements.txt
+</code> 
+</p>
+
 <h2>New features</h2>
 
-<ol>
+<ul>
   <li>Fake email address</li>
   <li>Getting verification code</li>
-</ol> 
+</ul> 
 
 #### Note: <p>Don't forget to add the <b>BeautifuSoup</b> and <b>Requests</b> libraries to take fake email.</p>
