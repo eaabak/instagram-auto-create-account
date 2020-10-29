@@ -23,5 +23,3 @@ browser = webdriver.Firefox("your firefox driver path here")
   <li>Fake email address</li>
   <li>Getting verification code</li>
 </ul> 
-
-#### Note: <p>Don't forget to add the <b>BeautifuSoup</b> and <b>Requests</b> libraries to take fake email.</p>
