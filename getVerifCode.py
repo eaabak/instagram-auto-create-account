@@ -10,12 +10,10 @@ def getInstVeriCode(mailName, domain, browser):
     
     # button = browser.find_element_by_xpath("/html/body/div[2]/div[1]/div[2]/table/tbody/tr[3]/td[1]/a/button").click()
     # time.sleep(3)
-    t   = browser.title
-    print(t)
+    t = browser.title
 
     while True:
         if t[:4]=="Fake":
-            print('in  loop')
             browser.refresh()
             t = browser.title
             print(t)
@@ -26,7 +24,6 @@ def getInstVeriCode(mailName, domain, browser):
     # code = browser.find_element_by_xpath("//*[@id='email-table']/div[2]/div[1]/div/h1").text
     # code = code.replace("is your Instagram code", "")
     code = t[:6]
-    print(code)
     browser.switch_to.window(browser.window_handles[0])
     return code
     
