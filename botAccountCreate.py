@@ -1,4 +1,4 @@
-﻿from selenium import webdriver
+from selenium import webdriver
 import time
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -30,10 +30,8 @@ username_field.send_keys(name)
 print(name)
 # Fill password value
 password_field = browser.find_element_by_name('password')
-# password_field.send_keys(account.generatePassword())  # You can determine another password here.
-password_field.send_keys('2565425654')  # You can determine another password here.
-# print(account.generatePassword())
-print('2565425654')
+password_field.send_keys(account.generatePassword())  # You can determine another password here.
+print(account.generatePassword())
 WebDriverWait(browser, 20).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='react-root']/section/main/div/div/div[1]/div/form/div[7]/div/button"))).click()
 
 time.sleep(8)
