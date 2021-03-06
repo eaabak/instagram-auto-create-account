@@ -69,14 +69,123 @@ def generatingName():
 
 # Generating a username
 def username(size=8, chars=string.ascii_lowercase + random.choice(['.', '_'])):
-    return ''.join(random.choice(chars) for _ in range(size))
+    word_list = [
+        "Agatha", "Agnes", "Aileen", "Alice", "Amy", "Angela", "Beatrice", "Bridget", "Catherine", 
+        "Cordelia", "Dorothy", "Edith", "Elizabethe", "Emery", "Emma", "Esther", "Florence", "Frances", 
+        "Gertrude", "Helen", "Irene", "Issabel", "Judith", "Lucy", "Margaret", "Martha", 
+        "Mary", "Matilda", "Naomi", "Phyllis", "Rebecca", "Rosemary", "Sabina", "Silvester", "Sophia", 
+        "Winifred", "Abel", "Ace", "Ada", "Adam", "Adela", "Adelio", "Adolph", "Adonis", "Adora", 
+        "Agatha", "Aggie", "Aida", "Ailish", "Aimee", "Alan", "Albert", "Albino", "Alex", 
+        "Alexandra", "Alfred", "Ali", "Alice", "Alika", "Allie", "Aloha", "Alvin", "Amanda", 
+        "Ami", "Amos", "Amy", "Anais", "Andra", "Andrew", "Andy", "Angel", "Angelica", "Anika", 
+        "Anna", "Annie", "Anthony", "Apollo", "Aria", "Ariel", "Arista", "Arnold", 
+        "Arvid", "Asha", "Aster", "Astin", "Aurora", "Ava", "Baba", "Bailey", "Baldy", 
+        "Bambi", "Barbara", "Barbie", "Barley", "Barney", "Baron", "Basil", "Baxter", "Beau", 
+        "Bebe", "Beck", "Becky", "Belita", "Bella", "Belle", "Benecia", "Benny", "Berg", "Bessie", 
+        "Biana", "Bianca", "Bibiane", "Billy", "Bingo", "Bishop", "Bliss", "Blondie", "Bonita", "Bono", 
+        "Boris", "Boss", "Bright", "Bruno", "Buck", "Buddy", "Bunny", "Caesar", "Caley", "Calix", 
+        "Calla", "Callia", "Camilla", "Captain", "Cara", "Carmel", "Carmen", "Casey", "Catherine", 
+        "Cecil", "Celestyn", "Celina", "Cha Cha", "Champ", "Charles", "Charlie", "Chase", "Chavi", 
+        "Chelsea", "Cherie", "Chilli", "Chloe", "Chrissy", "Chubby", "Cindy", "Clara", "Clark", 
+        "Claudia", "Cleo", "Cleta", "Cliff", "Coco", "Cody", "Colin", "Connie", "coo", "Corby", 
+        "Coy", "Coyote", "Crimson", "Crispin", "Crystal", "Cutie", "Cyclone", "Cyma", "Daisy", 
+        "Dali", "Danika", "Darby", "Daria", "Darin", "Dario", "Darwin", "Dave", "David", "Dean", 
+        "Della", "Delling", "Delphine", "Dennis", "Denver", "Derry", "Deva", "Dexter", "Diallo", 
+        "Dick", "Dino", "Dixie", "Donna", "Doris", "Dorothy", "Douglas", "Duke", "Dustin", "Dyllis", 
+        "Eavan", "Ebony", "Echo", "Edan", "Edeline", "Eden", "Edward", "Edwin", "Eilis", "Eldora", 
+        "Elf", "Elin", "Elisha", "Elizabeth", "Elle", "Elroy", "Elsa", "Elvis", "Elysia", "Emilie", 
+        "Eric", "Eris", "Eros", "Esteban", "Esther", "Eva", "Evan", "Eve", "Farrell", "Favian", 
+        "Fedora", "Felice", "Felix", "Fella", "Fidelio", "Filia", "Fleta", "Florence", "Floria", 
+        "Forrest", "Freeman", "Gabriel", "Gali", "Gem", "Gemma", "George", "Gilbert", "Gili", 
+        "Giovanni", "Gloria", "Goofy", "Grace", "Grania", "Gregory", "Haley", "Halona", "Happy", 
+        "Harley", "Harmony", "Harold", "Harry", "Heba", "Helen", "Helia", "Hera", "Hero", "Hestia", 
+        "Hollis", "Honey", "Hope", "Hubert", "Hue", "Huey", "Ian", "Iliana", "Indira", "Ingrid", 
+        "Irina", "Iris", "Isaac", "Isabel", "Isadora", "Isis", "Jace", "Jack", "Jackson", "Jaclyn", 
+        "Jade", "Jane", "Jasmine", "Jasper", "Jefferson", "Jeffrey", "Jenifer", "Jennie", "Jeremy", 
+        "Jericho", "Jerry", "Jess", "Jessica", "Jessie", "Jodie", "Johanna", "Jolly", "Jordan", "Joy", 
+        "Jud", "Julia", "Juliana", "Juliet", "Justin", "Kali", "Kara", "Karena", "Karis", "Kassia", 
+        "Kate", "Kellan", "Kelley", "Kerri", "Kevin", "Kitty", "Klaus", "Kori", "Kuper", "Kyra", 
+        "Lakia", "Lala", "Lamis", "Lani", "Lappy", "Lara", "Lavina", "Lee", "Leena", "Lelia", "Leo", 'Love'
+        "Leopold", "Lev", "Lidia", "Lily", "Lina", "Linda", "Lisa", "Lloyd", "Lonnie", "Lottie", "Louis", 
+        "Lowell", "Lucia", "Lucifer", "Lucy", "Lukas", "Luna", "Mabel", "Madonna", "Maggie", "Makaio", 
+        "Malissa", "Malo", "Mana", "Mandelina", "Manon", "Marcia", "Margaret", "Mary", "Mathilda", 
+        "Maya", "Melina", "Meriel", "Mickey", "Mighty", "Minnie", "Miranda", "Missy", "Misty", "Molly", 
+        "Monet", "Monica", "Morris", "Muffin", "Mulan", "Murphy", "Nadia", "Nalo", "Nami", "Nana", 
+        "Nani", "Naomi", "Nara", "Narcisse", "Navid", "Neal", "Neema", "Nero", "Nia", "Nicholas", 
+        "Nicky", "Nina", "Odelia", "Olga", "Olive", "Oliver", "Oscar", "Pablo", "Paloma", "Pamela", 
+        "Patrick", "Pavel", "Peggy", "Pello", "Penda", "Peppi", "Petra", "Phila", "Phillip", "Pinky", 
+        "Pluto", "Poco", "Polo", "Pooky", "Poppy", "Primo", "Prince", "Princess", "Puffy", "Rabia", 
+        "Raina", "Ralph", "Rambo", "Rania", "Ravi", "Redford", "Reggie", "Rei", "Remy", "Rex", "Richard", 
+        "Ricky", "Ringo", "Rio", "Risa", "Robbie", "Robert", "Robin", "Rocky", "Roja", "Rollo", "Romeo", 
+        "Rosie", "Roxy", "Roy", "Ruby", "Rudolph", "Rudy", "Ryan", "Sabrina", "Sally", "Salvatore", 
+        "Sam", "Samson", "Sandy", "Sarah", "Sasha", "Scarlet", "Scoop", "Sebastian", "Selina", "Selma", 
+        "Serena", "Severino", "Shaina", "Shasa", "Sheri", "Silky", "Simba", "Simon", "Sniper", "Solomon", 
+        "Sonia", "Sonny", "Sophie", "Sora", "Sparky", "Spooky", "Spotty", "Stella", "Steven", "Sting", 
+        "Storm", "Sugar", "Sunny", "Sweetie", "Sylvester", "Sylvia", "Talia", "Talli", "Tanesia", 
+        "Tania", "Ted", "Teenie", "Terra", "Tess", "Thomas", "Tomo", "Trisha", "Trudy", "Uba", 
+        "Umberto", "Valencia", "Vanessa", "Velika", "Vera", "Verdi", "Veronica", "Victoria", 
+        "Vincent", "Violet", "Vito", "Vivi", "Waldo", "Walter", "Weenie", "Wendy", "William", 
+        "Wily", "Winston", "Woody", "Yaro", "Yeti", "Yuki", "Zaza", "Zeki", "Zelia", "Zena", 
+        "Zenia", "Zenon", "Zeppelin", "Zeus", "Zili", "Zinna", "Zizi", "Zoe", "Zorro", "Zulu",
+    ]
+    word_list += chars
+
+    result_username = 'x' * 100 # Init username as dummy words
+    while len(result_username) < size or len(result_username) >= 30: ### Limit of instagram username length is 30
+        ### Case 0: Combination of words
+        n_word = random.randint(1,2)
+        target_word_list = list(map(lambda x: x.lower(), random.choices(word_list , k=n_word)))
+
+        ### Case 1: Flip each word (5%)
+        for word_i, target_word in enumerate(target_word_list):
+            if random.random() < 0.03:
+                target_word = target_word[::-1] 
+            target_word_list[word_i] = target_word
+
+        ### Case 2: replace charactor to 'x' or 'y' or number (3%)
+        for word_i, target_word in enumerate(target_word_list):
+            for ch_i in range(len(target_word)):
+                if random.random() < 0.03:
+                    target_char = random.choice(['x', 'y']+list(map(str, range(10))))
+                    target_word = target_word[:ch_i] + target_char + target_word[ch_i+1:] 
+            target_word_list[word_i] = target_word
+
+        ### Case 3: Repeat last charactor (7%, 1~4 times)
+        for word_i, target_word in enumerate(target_word_list):
+            # if random.random() < 0.07:
+            #     target_word = (target_word[0]*random.randint(1,3)) + target_word 
+            if random.random() < 0.07:
+                target_word += (target_word[-1]*random.randint(1,4)) 
+            target_word_list[word_i] = target_word
+
+        ### Case 4: Join the words with '.' or '_'
+        joining_char = random.choice(['.', '_'])
+        result_username = joining_char.join(target_word_list)
+
+        ### Case 5: Add some number to end (30%, 1~999999)
+        if random.random() < 0.3:
+            if random.random() < 0.6:
+                result_username += joining_char
+            additional_number_list = []
+            number_list = list(map(str, range(10)))
+            additional_number_list.append(random.choice(number_list))
+            number_list += ['']*10
+            additional_number_list += random.choices(number_list, k=5)
+            result_username += ''.join(list(map(str, additional_number_list)))
+
+    return result_username
 
 # Generating a password
-def generatePassword():
-    password_characters = string.ascii_letters + string.digits
-    return ''.join(random.choice(password_characters) for i in range(12))
-
+def generatePassword(passwd=None):
+    if passwd is None:
+        password_characters = string.ascii_letters + string.digits
+        return ''.join(random.choice(password_characters) for i in range(12))
+    else:
+        return passwd
 
 # Generating a Email
 def generatingEmail():
     return ''.join(username() + '@mail.com')
+
+if __name__=='__main__':
+    print(username(size=12, chars=string.ascii_lowercase + random.choice(['.', '_'])))
