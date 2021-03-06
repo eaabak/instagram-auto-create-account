@@ -142,7 +142,7 @@ def username(size=8, chars=string.ascii_lowercase + random.choice(['.', '_'])):
                 target_word = target_word[::-1] 
             target_word_list[word_i] = target_word
 
-        ### Case 2: replace charactor to 'x' or 'y' or number (3%)
+        ### Case 2: replace character to 'x' or 'y' or number (3%)
         for word_i, target_word in enumerate(target_word_list):
             for ch_i in range(len(target_word)):
                 if random.random() < 0.03:
@@ -150,7 +150,7 @@ def username(size=8, chars=string.ascii_lowercase + random.choice(['.', '_'])):
                     target_word = target_word[:ch_i] + target_char + target_word[ch_i+1:] 
             target_word_list[word_i] = target_word
 
-        ### Case 3: Repeat last charactor (7%, 1~4 times)
+        ### Case 3: Repeat last character (7%, 1~4 times)
         for word_i, target_word in enumerate(target_word_list):
             # if random.random() < 0.07:
             #     target_word = (target_word[0]*random.randint(1,3)) + target_word 
