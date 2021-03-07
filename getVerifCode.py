@@ -10,7 +10,7 @@ def getInstVeriCode(mailName, domain, driver):
     
     # button = browser.find_element_by_xpath("/html/body/div[2]/div[1]/div[2]/table/tbody/tr[3]/td[1]/a/button").click()
     # time.sleep(3)
-    t = browser.title
+    t = driver.title
 
     while True:
         if t[:4]=="Fake":
@@ -27,4 +27,5 @@ def getInstVeriCode(mailName, domain, driver):
     driver.switch_to.window(driver.window_handles[0])
     return code
     
+
 

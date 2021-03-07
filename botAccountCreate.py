@@ -1,23 +1,38 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-import accountInfoGenerator as account
 from fake_useragent import UserAgent
+import accountInfoGenerator as account
 import getVerifCode as verifiCode
 from selenium import webdriver
 import fakeMail as email
 import time
 
+import argparse
 
-options = Options()
+parser = argparse.ArgumentParser()
+group = parser.add_mutually_exclusive_group(required=True)
+group.add_argument("--firefox", action="store_true", help="Use Firefox - geckodriver")
+group.add_argument("--chrome", action="store_true", help = "Use Chrome - chromedriver")
+
+args = parser.parse_args()
 ua = UserAgent()
 userAgent = ua.random
 print(userAgent)
-options.add_argument(f'user-agent={userAgent}')
 
-driver= webdriver.Chrome(options=options, executable_path=r"your chrome driver path here")
+if args.firefox:
+    profile = webdriver.FirefoxProfile()
+    profile.set_preference("general.useragent.ovrride", userAgent)    
+    driver = webdriver.Firefox(firefox_profile=profile, executable_path=r"your gecko driver here")
+
+
+if args.chrome:
+    from selenium.webdriver.chrome.options import Options
+    options = Options()
+    options.add_argument(f'user-agent={userAgent}')
+    driver= webdriver.Chrome(options=options, executable_path=r"your chrome driver here")
+
 driver.get("https://www.instagram.com/accounts/emailsignup/")
 time.sleep(8)
 name = account.username()
@@ -62,3 +77,4 @@ mailName = fMail[0]
 domain = fMail[1]
 instCode = verifiCode.getInstVeriCode(mailName, domain, driver)
 driver.find_element_by_name('email_confirmation_code').send_keys(instCode, Keys.ENTER)
+
