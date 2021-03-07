@@ -8,7 +8,6 @@ import getVerifCode as verifiCode
 from selenium import webdriver
 import fakeMail as email
 import time
-
 import argparse
 
 parser = argparse.ArgumentParser()
