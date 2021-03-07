@@ -23,3 +23,11 @@ browser = webdriver.Firefox("your firefox driver path here")
   <li>Fake email address</li>
   <li>Getting verification code</li>
 </ul> 
+
+
+<h2>Thank you very much for your support</h2>
+
+<a href='https://github.com/BbChip0103'>BbChip0103</a> <br/>
+<a href='https://github.com/haniyadav'>haniyadav</a><br/>
+<a href='https://github.com/Gupta-Anubhav12'>Gupta-Anubhav12</a><br/>
+<a href='https://github.com/Mxhmovd'>Mxhmovd</a>
