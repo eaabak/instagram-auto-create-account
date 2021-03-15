@@ -28,4 +28,25 @@ def getInstVeriCode(mailName, domain, driver):
     return code
     
 
+def getInstVeriCodeDouble(mailName, domain, driver, oldCode):
 
+    INST_CODE = 'https://email-fake.com/' + domain + '/' + mailName
+    
+    driver.execute_script("window.open('');")
+    driver.switch_to.window(driver.window_handles[1])
+    driver.get(INST_CODE)
+    # Last send email first in the table
+    time.sleep(4)
+
+    t = driver.title
+    print(t)
+    code = driver.find_element_by_xpath("/html/body/div[3]/div/div/div[1]/div[2]/a[1]/div[2]").text
+    while oldCode == code:
+        driver.refresh()
+        print('Whait for new code!')
+        time.sleep(1)
+        code = driver.find_element_by_xpath("//*[@id='email-table']/div[2]/div[1]/div/h1").text
+    
+    codeNew = code[:6]
+    driver.switch_to.window(driver.window_handles[0])
+    return codeNew
