@@ -37,7 +37,6 @@ def getInstVeriCodeDouble(mailName, domain, driver, oldCode):
     driver.get(INST_CODE)
     time.sleep(4)
 
-    t = driver.title
     print(t)
     code = driver.find_element_by_xpath("/html/body/div[3]/div/div/div[1]/div[2]/a[1]/div[2]").text
     while oldCode == code:
