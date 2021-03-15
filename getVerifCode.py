@@ -35,7 +35,6 @@ def getInstVeriCodeDouble(mailName, domain, driver, oldCode):
     driver.execute_script("window.open('');")
     driver.switch_to.window(driver.window_handles[1])
     driver.get(INST_CODE)
-    # Last send email first in the table
     time.sleep(4)
 
     t = driver.title
