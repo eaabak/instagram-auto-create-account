@@ -10,27 +10,12 @@ import fakeMail as email
 import time
 import argparse
 
-parser = argparse.ArgumentParser()
-group = parser.add_mutually_exclusive_group(required=True)
-group.add_argument("--firefox", action="store_true", help="Use Firefox - geckodriver")
-group.add_argument("--chrome", action="store_true", help = "Use Chrome - chromedriver")
+driver= webdriver.Chrome(executable_path=r"chromedriver.exe")
 
 args = parser.parse_args()
 ua = UserAgent()
 userAgent = ua.random
 print(userAgent)
-
-if args.firefox:
-    profile = webdriver.FirefoxProfile()
-    profile.set_preference("general.useragent.ovrride", userAgent)    
-    driver = webdriver.Firefox(firefox_profile=profile, executable_path=r"your gecko driver here")
-
-
-if args.chrome:
-    from selenium.webdriver.chrome.options import Options
-    options = Options()
-    options.add_argument(f'user-agent={userAgent}')
-    driver= webdriver.Chrome(options=options, executable_path=r"your chrome driver here")
 
 driver.get("https://www.instagram.com/accounts/emailsignup/")
 time.sleep(8)
