@@ -17,7 +17,7 @@ text = "qwertyuiopasdfghjklzxcvbnm1234567890"
 #if you use firefox, change it to driver= webdriver.Firefox(executable_path=r"C:\Users\user\Downloads\Geckodriver.exe")
 
 driver= webdriver.Chrome(executable_path=r"C:\Users\user\Downloads\chromedriver.exe") #change it to your path.
-driver.set_window_position(-10000,0) #hides the chrome window, delete it if you don't need it.
+driver.set_window_position(-10000,0) #hides the window, delete it if you don't need it.
 
 ua = UserAgent()
 userAgent = ua.random
