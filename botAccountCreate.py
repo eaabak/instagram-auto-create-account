@@ -53,7 +53,7 @@ acc_password = account.generatePassword()
 password_field.send_keys(acc_password)
 
 #writes name + password into "accounts.txt" file.
-print(name,acc_password, file=acc)
+print(name+":"+acc_password, file=acc)
 
 acc.close()
 
