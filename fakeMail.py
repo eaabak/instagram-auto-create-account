@@ -6,4 +6,5 @@ def getFakeMail():
     req = requests.get(url)
     soup = BeautifulSoup(req.content, "html.parser")
     mail = soup.find_all("span", {"id": "email_ch_text"})
-    return mail[0].contents
+    return mail[0]
+

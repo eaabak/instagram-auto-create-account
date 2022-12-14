@@ -1,0 +1,4 @@
+{
+    "aws.codeWhisperer.includeSuggestionsWithCodeReferences": true,
+    "liveServer.settings.port": 5501
+}
