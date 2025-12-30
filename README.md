@@ -1,3 +1,14 @@
+## ⚠️ ARCHIVED PROJECT – EDUCATIONAL PURPOSES ONLY
+
+This repository is archived and provided strictly for historical and educational reference.
+
+It is NOT maintained and must NOT be used for:
+- Automating account creation on any platform
+- Bypassing security, verification or CAPTCHA systems
+- Scraping, fraud, impersonation, or any activity that violates platform Terms of Service
+
+The author does not support or endorse any form of platform abuse or policy circumvention.
+
 ## Instagram Automatic Account Creator Bot
 
 <p>This small piece of code will create an account automatically by randomizing names. You need Selenium library installed. This is an ongoing work. Beware that Instagram has security measures to prevent bot usage. Do not forget to change the Web driver you use from the part of the code in botAccountCreate.py :</p>
